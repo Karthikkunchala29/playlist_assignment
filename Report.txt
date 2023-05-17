@@ -1,0 +1,29 @@
+ Report:
+
+1. The programme imports the required modules, including `random` for random selection and `pygame` for playing audio.
+
+2. It defines a list `audio_files` containing the names or paths of the audio files to be played.
+
+3. It initializes the pygame mixer using pygame.mixer.init().
+
+4. The code creates a copy of the `audio_files` list called `unplayed_audios` to keep track of the audio files that have not been played yet.
+
+5. The code enters a `while` loop that continues until all audio files have been played exactly once.
+
+6. Inside the loop, it randomly selects an audio file from the `unplayed_audios` list using `random.choice()`.
+
+7. The selected audio file is removed from the `unplayed_audios` list to prevent repetition within a single cycle.
+
+8. The code loads the selected audio file using `pygame.mixer.music.load(audio_file)`.
+
+9. It plays the loaded audio file using `pygame.mixer.music.play()`.
+
+10. The code then enters another loop that waits for the audio to finish playing. It continuously checks `pygame.mixer.music.get_busy()` until the audio has finished playing.
+
+11. After the audio has finished playing, the loop repeats by selecting another random audio file from the `unplayed_audios` list.
+
+12. The outer `while` loop continues until all audio files in the `unplayed_audios` list have been played exactly once.
+
+13. Finally, the code cleans up the resources by calling `pygame.mixer.quit()`.
+
+In summary, the updated code plays all the audio files in a random order without repetition within a single cycle. It ensures that each audio file is played exactly once before the cycle is completed.
